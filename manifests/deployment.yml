@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: travisliupipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: travisliupipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: travisliupipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: travisliupipelinesjavascriptdocker 
+          image: myprocontainerregistry.azurecr.io/travisliupipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
